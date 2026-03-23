@@ -1,18 +1,35 @@
 Package: NordicPlantTraitExplorer
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Interactice shiny app for exploring Nordic plant traits
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Nora", "Fanebust",
+      email = "nora.fanebust@hotmail.com",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
+Description: R package that launches an interactive shiny app for exploring relationships 
+    among plant functional traits. The package includes a dataset of plant trait 
+    values for over 3000 species from the Nordic region. Can visualise 
+    trait relationships to explore ecological strategies such as leaf economics and rescouse useage.
 License: MIT + file LICENSE
 Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    shiny,
+    bslib,
+    ggplot2,
+    dplyr,
+    ggiraph,
+    rlang
+Suggests:
+    testthat (>= 3.0.0),
+    readr
 LazyData: true
 URL: https://github.com/NoraFanebust/NordicPlantTraitExplorer
 BugReports: https://github.com/NoraFanebust/NordicPlantTraitExplorer/issues
+Config/testthat/edition: 3
+Depends: 
+    R (>= 4.1.0)
