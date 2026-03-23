@@ -7,6 +7,7 @@
 #' @return No return value. Called for its side effects in a Shiny app.
 #' @keywords internal
 server <- function(input, output, session) {
+  utils::data("data_clean")
 
   shiny::observe({
     choices <- unique(as.character(data_clean$woodiness))
