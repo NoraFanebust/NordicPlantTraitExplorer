@@ -1,5 +1,4 @@
-#' Chosen trait variables for the app
-#'
+#' Chosen traits for the app
 #' Returns the column names that can be selected for the x- and y-axes.
 #'
 #' @return A character vector of trait variable names.
@@ -24,11 +23,11 @@ trait_choices <- function() {
 trait_labels <- function() {
   c(
     seed_mass = "Seed mass (mg)",
-    SLA = "Specific leaf area (mm²/mg)",
+    SLA = "Specific leaf area (mm^2/mg)",
     leaf_CN_ratio = "Leaf C:N ratio",
     leaf_N = "Leaf nitrogen (mg/g)",
     height = "Plant height (cm)",
-    leaf_area = "Leaf area (mm²)",
+    leaf_area = "Leaf area (mm^2)",
     rooting_depth = "Rooting depth (m)",
     LDMC = "Leaf dry matter content (g/g)"
   )

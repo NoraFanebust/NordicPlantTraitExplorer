@@ -1,9 +1,7 @@
-#' Build the interactive trait plot
+#' Build the interactive ggiraph scatterplot for the chosen plant trait data.
 #'
-#' ggiraph scatterplot for the chosen plant trait data.
-#'
-#' @param df A filtered data frame used for plotting.
-#' @param input A shiny input object or input-like list containing
+#' @param df filtered data frame used for plotting.
+#' @param input A shiny input object or input-like list wiht
 #'   \code{x_trait}, \code{y_trait}, \code{log_xy}, and \code{trend_line}.
 #'
 #' @return A ggiraph widget.
@@ -73,6 +71,7 @@ make_trait_plot <- function(df, input) {
       ggiraph::geom_smooth_interactive(
         ggplot2::aes(tooltip = eq_label),
         method = "lm",
+        color = "#1b3427",
         se = FALSE
       )
   }

@@ -4,16 +4,16 @@
 #' @keywords internal
 ui <- function() {
   bslib::page_sidebar(
-    title = "Nordic plant trait explorer",
+    title = "Nordic Plant Trait Explorer",
     shiny::div(
       style = "font-size: 13px;
     line-height: 1.2;",
       shiny::p("Explore relationships between plant traits across Nordic plant species.
 Select traits, filter their ranges, and hover over points to see species-level values. Traits represent key ecological strategies:"),
-      shiny::p("• Reproduction: seed mass"),
-      shiny::p("• Leaf economics: SLA, LDMC, leaf nitrogen, C:N ratio"),
-      shiny::p("• Size and resource use: height, leaf area, rooting depth"),
-      shiny::p("• Growth form: woodiness (woody vs non-woody)"),
+      shiny::p("- Reproduction: seed mass"),
+      shiny::p("- Leaf economics: SLA, LDMC, leaf nitrogen, leaf C:N ratio"),
+      shiny::p("- Size and resource use: height, leaf area, rooting depth"),
+      shiny::p("- Growth form: woodiness (woody vs non-woody)"),
       shiny::p("Note: Colours are for visual distinction only and do not represent any variable.")
     ),
     sidebar = bslib::sidebar(

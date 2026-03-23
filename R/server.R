@@ -62,10 +62,6 @@ server <- function(input, output, session) {
   output$myplot <- ggiraph::renderGirafe({
     df <- filtered_data()
 
-    shiny::validate(
-      shiny::need(nrow(df) > 0, "No data left after filtering")
-    )
-
     make_trait_plot(df, input)
   })
 }
