@@ -1,36 +1,48 @@
+#' Creates the user interface for the plant trait explorer shiny app.
+#'
+#' @return A Shiny UI definition.
+#' @keywords internal
 ui <- function() {
-  page_sidebar(
-    title = "Titel",
-    h1("overskrift?"),
-    p("si noe om graf..."),
-    sidebar = sidebar(
-      selectInput(
+  bslib::page_sidebar(
+    title = "Nordic plant trait explorer",
+    shiny::div(
+      style = "font-size: 13px;
+    line-height: 1.2;",
+      shiny::p("Explore relationships between plant traits across Nordic plant species.
+Select traits, filter their ranges, and hover over points to see species-level values. Traits represent key ecological strategies:"),
+      shiny::p("• Reproduction: seed mass"),
+      shiny::p("• Leaf economics: SLA, LDMC, leaf nitrogen, C:N ratio"),
+      shiny::p("• Size and resource use: height, leaf area, rooting depth"),
+      shiny::p("• Growth form: woodiness (woody vs non-woody)"),
+      shiny::p("Note: Colours are for visual distinction only and do not represent any variable.")
+    ),
+    sidebar = bslib::sidebar(
+      shiny::selectInput(
         inputId = "x_trait",
         label = "X-axis trait:",
-        choices = trait_choices,
-        selected = "seed_mass"
+        choices = trait_choices(),
+        selected = "leaf_N"
       ),
-      uiOutput("x_slider"),
-      selectInput(
+      shiny::uiOutput("x_slider"),
+      shiny::selectInput(
         inputId = "y_trait",
         label = "Y-axis trait:",
-        choices = trait_choices,
+        choices = trait_choices(),
         selected = "SLA"
       ),
-      uiOutput("y_slider"),
-      checkboxGroupInput(
+      shiny::uiOutput("y_slider"),
+      shiny::checkboxGroupInput(
         inputId = "woodiness",
         label = "Woodiness",
-        choices = woodiness_choices(),
-        selected = woodiness_choices()
+        choices = NULL
       ),
-      checkboxInput(
+      shiny::checkboxInput(
         inputId = "log_xy",
         label = "Log-transform values",
         value = FALSE
       ),
-      checkboxInput("trend_line", "Show trend line", FALSE)
+      shiny::checkboxInput("trend_line", "Show trend line", FALSE)
     ),
-    card(girafeOutput("myplot", height = "600px"))
+    bslib::card(ggiraph::girafeOutput("myplot"))
   )
 }
